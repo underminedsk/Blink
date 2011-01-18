@@ -16,12 +16,13 @@ public class BaseController extends Controller {
 	
 	public static void index() {
 		renderText("blink server is up! \n\n" +
-				" use POST     /transaction       to initiate transactions  \n" +
-				"      parameters: 'knownkey' (required), 'unknownkey' (optional)   \n" +
-				" use POST     /user/insert       with a JSON body to create a new user \n" +
-				" use GET      /user/{key}        to get information on a user in JSON format \n\n" +
-				" JSON User specification: \n" +
-				"    first, last, email, phone, key");
+				" use POST     /transaction.json       to initiate transactions  \n" +
+				"      parameters: 'knownkey' (required): your unique key, 'unknownkey' (optional): if you are scanning, this is the key you got from the scan.   \n" +
+				"      response is a JSON object containing the other person's contact information.  \n" +
+				" use POST     /user/insert.json       with a JSON body to create a new user \n" +
+				" use GET      /user/{key}.json        to get information on a user in JSON format \n\n" +
+				" JSON user object specification: \n" +
+				"    first, last, email, phone, key - note when adding a user a unique key is assigned by the server so supply only the first four fields");
 	}
 
 	
