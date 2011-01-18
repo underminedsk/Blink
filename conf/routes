@@ -1,0 +1,18 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Transaction Controller
+GET			/transaction						TransactionController.handleTransactionRequest
+GET			/									TransactionController.index
+
+# User Controller
+POST		/user/insert						UserController.insert
+GET			/user/{key}							UserController.get
+
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}
