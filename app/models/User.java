@@ -17,23 +17,23 @@ public class User extends Model {
 	
 	private static final String TAG = "User(Model)";
 	
-	public String firstName;
-	public String lastName;
+	public String first;
+	public String last;
 	
 	//TODO: should be unique
 	public String email;
-	public String phoneNumber;
+	public String phone;
 	public String key;
 	
 	
-	private User(String fName, String lName, String email, String phoneNumber) {
-		if (fName == null && lName == null && email == null && phoneNumber == null) 
+	private User(String fName, String lName, String email, String phone) {
+		if (fName == null && lName == null && email == null && phone == null) 
 			throw new IllegalArgumentException("cannot create a user object with all blank fields");
 		
-		this.firstName = fName.trim();
-		this.lastName = lName.trim();
+		this.first = fName.trim();
+		this.last = lName.trim();
 		this.email = email.trim();
-		this.phoneNumber = phoneNumber.trim();
+		this.phone = phone.trim();
 		this.key = UUID.randomUUID().toString();
 	}
 	
@@ -50,9 +50,9 @@ public class User extends Model {
 		String fName, lName, pNumber, em, k;
 		fName = lName = pNumber = em = k = null;
 		try {
-			if (json.has("firstName")) fName = json.getString("firstName");
-			if (json.has("lastName")) lName = json.getString("lastName");
-			if (json.has("phoneNumber")) pNumber = json.getString("phoneNumber");
+			if (json.has("first")) fName = json.getString("first");
+			if (json.has("last")) lName = json.getString("last");
+			if (json.has("phone")) pNumber = json.getString("phone");
 			if (json.has("email")) em = json.getString("email");
 			if (json.has("key")) k = json.getString("key");
 		} catch (JSONException e) {
@@ -68,10 +68,10 @@ public class User extends Model {
 	
 	public String toJSONString() {
 		try {
-			JSONObject json = new JSONObject().put("firstName", firstName)
-								   .put("lastName", lastName)
+			JSONObject json = new JSONObject().put("first", first)
+								   .put("last", last)
 								   .put("email", email)
-								   .put("phoneNumber", phoneNumber)
+								   .put("phone", phone)
 								   .put("key", key);
 			json.put("QRCodeURL", QRCodeManager.generateQRCodeURL(key));
 			return json.toString();
@@ -87,10 +87,10 @@ public class User extends Model {
 	
 	public String toString() {
 		String returnString = "------------------------";
-		returnString += "  firstName: " + firstName;
-		returnString += "  lastName: " + lastName;
+		returnString += "  first: " + first;
+		returnString += "  last: " + last;
 		returnString += "  email: " + email;
-		returnString += "  phoneNumber: " + phoneNumber;
+		returnString += "  phone: " + phone;
 		returnString += "  key: " + key;
 		returnString += "------------------------";
 		return returnString;

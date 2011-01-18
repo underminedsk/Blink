@@ -17,12 +17,11 @@ public class BaseController extends Controller {
 	public static void index() {
 		renderText("blink server is up! \n\n" +
 				" use POST     /transaction       to initiate transactions  \n" +
-				"      parameters: 'knownkey' (required)  \n" +
-				"				   'unknownkey'(optional)   \n" +
+				"      parameters: 'knownkey' (required), 'unknownkey' (optional)   \n" +
 				" use POST     /user/insert       with a JSON body to create a new user \n" +
 				" use GET      /user/{key}        to get information on a user in JSON format \n\n" +
 				" JSON User specification: \n" +
-				"    firstName, lastName, email, phone, key");
+				"    first, last, email, phone, key");
 	}
 
 	
