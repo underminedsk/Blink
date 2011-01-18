@@ -1,5 +1,6 @@
 package models;
 
+import java.net.URISyntaxException;
 import java.util.UUID;
 
 import javax.persistence.Entity;
@@ -76,6 +77,10 @@ public class User extends Model {
 			return json.toString();
 		} catch (JSONException e) {
 			Log.error(TAG, e);
+			return null;
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 			return null;
 		}
 	}
