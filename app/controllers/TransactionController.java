@@ -12,10 +12,6 @@ public class TransactionController extends BaseController {
 	
 	private static final String TAG = "TransactionController";
 	
-	public static void index() {
-		renderText("blink server is up!");
-	}
-
 	/*
 	 * A client may call this method in one of two configurations.  They may specify either
 	 * 1.  a parameter labeled 'knownKey' and a parameter labeled 'unknownKey'

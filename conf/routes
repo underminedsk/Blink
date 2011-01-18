@@ -2,9 +2,13 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
+# base controller
+GET			/									BaseController.index
+
+
 # Transaction Controller
 GET			/transaction						TransactionController.handleTransactionRequest
-GET			/									TransactionController.index
+
 
 # User Controller
 POST		/user/insert						UserController.insert

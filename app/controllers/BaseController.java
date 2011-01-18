@@ -13,6 +13,19 @@ import support.Log;
 public class BaseController extends Controller {
 	private static final String TAG = "BaseController";
 	
+	
+	public static void index() {
+		renderText("blink server is up! \n\n" +
+				" use POST     /transaction       to initiate transactions  \n" +
+				"      parameters: 'knownkey' (required)  \n" +
+				"				   'unknownkey'(optional)   \n" +
+				" use POST     /user/insert       with a JSON body to create a new user \n" +
+				" use GET      /user/{key}        to get information on a user in JSON format \n\n" +
+				" JSON User specification: \n" +
+				"    firstName, lastName, email, phone, key");
+	}
+
+	
     public static String getBodyAsString() {
     	
     	if( ! request.isNew ) {
