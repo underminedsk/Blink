@@ -19,7 +19,7 @@ public class BaseController extends Controller {
 				" use POST     /transaction.json       to initiate transactions  \n" +
 				"      parameters: 'knownkey' (required): your unique key, 'unknownkey' (optional): if you are scanning, this is the key you got from the scan.   \n" +
 				"      response is a JSON object containing the other person's contact information.  \n" +
-				" use POST     /user/insert.json       with a JSON body to create a new user \n" +
+				" use POST     /user/update.json       with a JSON body to create a new user \n" +
 				" use GET      /user/{key}.json        to get information on a user in JSON format \n\n" +
 				" JSON user object specification: \n" +
 				"    first, last, email, phone, key - note when adding a user a unique key is assigned by the server so supply only the first four fields");

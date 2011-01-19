@@ -11,8 +11,9 @@ POST		/v1/transaction.json						TransactionController.handleTransactionRequest
 
 
 # User Controller
-POST		/v1/user/insert.json						UserController.insert
+POST		/v1/user/update.json						UserController.insertOrUpdate
 GET			/v1/user/{key}.json							UserController.get
+GET			/v1/users.json								UserController.all
 
 
 # Map static resources from the /app/public folder to the /public path
